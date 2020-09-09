@@ -78,7 +78,11 @@ This paper presents a new approach to tackle the ConnectX. Our approach achieved
 
 \section{Related Work}
 \subsection{Q-Learning}
-\subsection{Deep Q-Learning}
+\begin{equation}
+Q^{new}(s_t, a_t)  \leftarrow (1-\alpha)Q(s_t, a_t) + \alpha \cdot \left(r_t + \gamma \cdot \mathop{\arg\max}_{a}  Q(s_{t+1}, a) \right)
+\end{equation}
+Where Q is the function $Q: S \times A \rightarrow R$, $r_t$ is the reward received when moving from the state $s_t$ to the state $s_{t+1}$, $\alpha$ is the learning rate ($ 0 < \alpha < 1$), $\gamma$ is the discount factor ($0 \leq \gamma \leq 1$).
+\subsection{Deep Q-Learning (DQN)}
 
 \section{Methods}
 
@@ -88,14 +92,23 @@ This paper presents a new approach to tackle the ConnectX. Our approach achieved
 \section{Results}
 
 We 
-\begin{table}
-\begin{tabular}
-method & score \\
-random select & \\
-heuristic select & \\
+\begin{table}[!htp]
+\centering
+\begin{tabular}{c|c}
+\toprule
+Method & Score \\
+\toprule
+random select & 446.3 \\
+\hline
+heuristic select & 600.0 \\
+\hline
 Q-Learning & \\
+\hline
 Deep Q-Learning & \\
+\bottomrule
 \end{tabular}
+\caption{Methods comparison}
+\label{tab:methods}
 \end{table}
 
 
